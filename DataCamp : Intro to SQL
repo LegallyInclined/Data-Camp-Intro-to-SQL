@@ -39,3 +39,70 @@ Get the names of people who are still alive, i.e. whose death date is missing
 SELECT name
 FROM people
 WHERE deathdate IS NULL;
+
+Get the title of every film which doesn't have a budget associated with it.
+
+SELECT title 
+FROM films 
+WHERE budget IS NULL;
+
+Get the number of films which don't have a language associated with them.
+
+SELECT COUNT(*)
+FROM films
+WHERE language IS NULL;
+
+Get the names of all people whose names begin with 'B'. 
+
+SELECT name
+FROM people
+WHERE name LIKE 'B%';
+
+Get the names of people whose names have 'r' as the second letter.
+
+SELECT name
+FROM people
+WHERE name LIKE '_r%';
+
+Get the names of people whose names don't start with A.
+
+SELECT name 
+FROM people
+WHERE name NOT LIKE 'A%'; 
+
+Use the SUM() function to get the total duration of all films.
+
+SELECT SUM(duration)
+FROM films; 
+
+Get the average duration of all films.
+
+SELECT AVG(duration)
+FROM films; 
+
+Get the duration of the shortest film.
+
+SELECT MIN(duration)
+FROM films; 
+
+Get the duration of the longest film.
+
+SELECT MAX(duration)
+FROM films;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
