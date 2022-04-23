@@ -1,3 +1,11 @@
+Query to get the title and release year of films released in the 90s which were in French or Spanish and which took in more than $2M gross.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year >= 1990 AND release_year < 2000)
+AND (language = 'French' OR language = 'Spanish')
+AND (gross > 2000000);
+
 Using BETWEEN with AND on the films data (4968 rows) to get the title and release year of all 
 Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million.
 
@@ -6,3 +14,28 @@ FROM films
 WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 AND (language = 'Spanish' OR language = 'French');
+
+Get the title and release year of all films released in 1990 or 2000 that were longer than two hours.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year = 1990 OR release_year=2000)
+AND duration > 120; 
+
+Get the title and language of all films which were in English, Spanish, or French.
+
+SELECT title, language
+FROM films
+WHERE language IN ('English', 'Spanish', 'French');
+
+Get the title and certification of all films with an NC-17 or R certification.
+
+SELECT title, certification
+FROM films
+WHERE certification IN ('NC-17', 'R');
+
+Get the names of people who are still alive, i.e. whose death date is missing
+
+SELECT name
+FROM people
+WHERE deathdate IS NULL;
