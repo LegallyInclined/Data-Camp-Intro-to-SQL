@@ -335,6 +335,30 @@ HAVING COUNT(title) > 10
 ORDER BY country
 LIMIT 5;
 
+Inner join the cities table on the left to the countries table on the right, keeping all of the fields in both tables.
+You should match the tables on the country_code field in cities and the code field in countries.
+
+SELECT * 
+FROM cities
+  INNER JOIN countries
+    ON cities.country_code = countries.code;
+    
+Modify the SELECT statement to keep only the name of the city, the name of the country, and the name of the region the country resides in.
+Alias the name of the city AS city and the name of the country AS country.
+
+SELECT region, cities.name AS city, countries.name AS country 
+FROM cities
+  INNER JOIN countries
+    ON cities.country_code = countries.code;
+    
+Join the tables countries (left) and economies (right) aliasing countries AS c and economies AS e.
+Specify the field to match the tables ON. From this join, SELECT:
+c.code, aliased as country_code. name, year, and inflation_rate, not aliased.
+
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+  INNER JOIN economies AS e
+    ON c.code = e.code;
 
 
 
