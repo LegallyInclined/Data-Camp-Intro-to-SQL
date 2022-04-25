@@ -4,9 +4,9 @@ Query to get the title and release year of films released in the 90s which were 
 
 SELECT title, release_year
 FROM films
-WHERE (release_year >= 1990 AND release_year < 2000)
-AND (language = 'French' OR language = 'Spanish')
-AND (gross > 2000000);
+WHERE release_year >= 1990 AND release_year < 2000
+AND language = 'French' OR language = 'Spanish'
+AND gross > 2000000;
 
 Using BETWEEN with AND on the films data (4968 rows) to get the title and release year of all 
 Spanish language films released between 1990 and 2000 (inclusive) with budgets over $100 million.
