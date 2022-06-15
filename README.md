@@ -1,2 +1,2 @@
 # Personal-Portfolio
-This portfolio contains all coding projects completed by Hamid Rahmani.
+This portfolio contains all projects completed by Hamid Rahmani.
